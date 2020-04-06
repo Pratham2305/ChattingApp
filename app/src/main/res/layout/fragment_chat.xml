@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".ChatFrag">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/conversation_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/no_chat_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="25dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/chatting" />
+
+    <TextView
+        android:id="@+id/no_chat_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/adlery"
+        android:text="Add Friends to Chat"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+</FrameLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".FriendsFrag">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/friendsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/no_friend_iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="25dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/friends" />
+
+    <TextView
+        android:id="@+id/no_friend_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/adlery"
+        android:text="No Added Friends"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+</FrameLayout>

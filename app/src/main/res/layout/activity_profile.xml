@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2d2d2d"
+    tools:context=".ProfileActivity">
+
+    <include
+        android:id="@+id/profile_toolbar"
+        layout="@layout/app_bar_layout">
+
+    </include>
+
+    <ImageView
+        android:id="@+id/ivProfilePhoto"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="375dp"
+        android:fitsSystemWindows="true"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_toolbar"
+        app:srcCompat="@drawable/default_avatar" />
+
+    <TextView
+        android:id="@+id/tvProfileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="362dp"
+        android:layout_marginEnd="260dp"
+        android:transitionName="nameTransition"
+        android:layout_marginRight="260dp"
+        android:text="Martin King"
+        android:textColor="#ffffff"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toEndOf="@+id/ivProfilePhoto"
+        app:layout_constraintTop_toTopOf="@+id/ivProfilePhoto" />
+
+    <TextView
+        android:id="@+id/tvProfileStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginRight="177dp"
+        android:fontFamily="sans-serif"
+        android:text="Status"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:transitionName="statusTransition"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfileName" />
+
+    <Button
+        android:id="@+id/btRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="166dp"
+        android:layout_marginLeft="166dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginRight="157dp"
+        android:layout_marginBottom="111dp"
+        android:background="#4169E1	"
+        android:text="  Send Friend Request  "
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFriendsCount"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <TextView
+        android:id="@+id/tvFriendsCount"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginStart="177dp"
+        android:layout_marginLeft="177dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="175dp"
+        android:layout_marginRight="175dp"
+        android:text="Friends Count :-"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfileStatus" />
+
+    <Button
+        android:id="@+id/btDecline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginRight="163dp"
+        android:layout_marginBottom="8dp"
+        android:background="#4169E1	"
+        android:enabled="false"
+        android:text="  Decline Friend Request  "
+        android:textColor="#ffffff"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btRequest" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="248dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginRight="156dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:transitionName="imageTransition"
+        app:layout_constraintTop_toTopOf="@+id/ivProfilePhoto"
+        app:srcCompat="@drawable/chatting" />
+</androidx.constraintlayout.widget.ConstraintLayout>
