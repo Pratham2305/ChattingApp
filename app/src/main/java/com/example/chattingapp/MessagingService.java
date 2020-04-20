@@ -1,14 +1,11 @@
 package com.example.chattingapp;
 
-import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import com.example.chattingapp.R;
-import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 public class MessagingService extends com.google.firebase.messaging.FirebaseMessagingService {
@@ -45,3 +42,4 @@ public class MessagingService extends com.google.firebase.messaging.FirebaseMess
 
     }
 }
+

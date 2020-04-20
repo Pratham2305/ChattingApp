@@ -3,8 +3,10 @@ package com.example.chattingapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -65,7 +67,7 @@ public class ChatActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private String mCurrentUserID;
     private CircleImageView chat_user_image;
-    private TextView last_seen;
+    private TextView last_seen,user_name;
     private ImageButton btChatSent, btChatAdd;
     private EditText etChatMessage;
     private RecyclerView mMessagesList;
@@ -99,7 +101,7 @@ public class ChatActivity extends AppCompatActivity {
         mAuth= FirebaseAuth.getInstance();
         mCurrentUserID=mAuth.getCurrentUser().getUid();
 
-        toolbar=findViewById(R.id.chat_app_bar);
+        toolbar=findViewById(R.id.chat_toolbar);
         etChatMessage=findViewById(R.id.etChatMessage);
         btChatAdd=findViewById(R.id.btChatAdd);
         btChatSent=findViewById(R.id.btChatSent);
@@ -128,10 +130,48 @@ public class ChatActivity extends AppCompatActivity {
 
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowCustomEnabled(true);
-       actionBar.setTitle(userName);
 
-       chat_user_image=findViewById(R.id.custom_bar_image);
-       last_seen=findViewById(R.id.last_seen);
+       chat_user_image=findViewById(R.id.chat_toolbar_img);
+       last_seen=findViewById(R.id.chat_toolbar_status);
+       user_name=findViewById(R.id.chat_toolbar_name);
+
+       user_name.setText(userName);
+
+
+       toolbar.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+
+
+
+               DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                   @Override
+                   public void onClick(DialogInterface dialog, int which) {
+                       switch (which){
+                           case DialogInterface.BUTTON_POSITIVE:
+                               //Yes button clicked
+                               Intent intent=new Intent(ChatActivity.this,ProfileActivity.class);
+                               intent.putExtra("user_id",mChatUser);
+                               startActivity(intent);
+
+                               break;
+
+                           case DialogInterface.BUTTON_NEGATIVE:
+                               //No button clicked
+                               break;
+                       }
+                   }
+               };
+
+               AlertDialog.Builder builder = new AlertDialog.Builder(ChatActivity.this);
+               builder.setMessage("Want to Open User's Profile?").setPositiveButton("Yes", dialogClickListener)
+                       .setNegativeButton("No", dialogClickListener).show();
+
+
+           }
+       });
+
+
 
         Picasso.with(ChatActivity.this).load(imageUrl).placeholder(R.drawable.default_avatar).into(chat_user_image);
 
@@ -218,16 +258,7 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
-        mRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
 
-                mCurrentPage++;
-                itemPos=0;
-
-
-            }
-        });
 
 
 

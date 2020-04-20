@@ -1,17 +1,25 @@
 package com.example.chattingapp;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkInfo;
 import android.nfc.Tag;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.widget.Toolbar;
@@ -58,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+
+
+
+
         if (mAuth.getCurrentUser() != null){
         mUserRef= FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());}
 
@@ -76,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onStart() {
         super.onStart();
@@ -88,7 +101,13 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else {
-            mUserRef.child("online").setValue("true");
+
+            if (!haveNetworkConnection()){
+                Toast.makeText(this,"NO INTERNET ACCESS !!"+"\n"+" Please Make sure that you are Connected to Internet ",Toast.LENGTH_LONG).show();
+                mUserRef.child("online").setValue("true");
+            }
+
+
         }
 
 
@@ -104,6 +123,24 @@ public class MainActivity extends AppCompatActivity {
         if (currentUser != null){
         mUserRef.child("online").setValue(ServerValue.TIMESTAMP);
         }
+    }
+
+
+    private boolean haveNetworkConnection() {
+        boolean haveConnectedWifi = false;
+        boolean haveConnectedMobile = false;
+
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+        for (NetworkInfo ni : netInfo) {
+            if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+                if (ni.isConnected())
+                    haveConnectedWifi = true;
+            if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
+                if (ni.isConnected())
+                    haveConnectedMobile = true;
+        }
+        return haveConnectedWifi || haveConnectedMobile;
     }
 
     @SuppressLint("RestrictedApi")

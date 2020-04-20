@@ -52,7 +52,8 @@
             android:drawableLeft="@drawable/key"
             android:gravity="center_horizontal|center_vertical"
             android:hint="Password"
-            android:paddingLeft="10dp" />
+            android:paddingLeft="10dp"
+            android:password="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

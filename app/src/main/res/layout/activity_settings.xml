@@ -13,7 +13,7 @@
         android:layout_height="200dp"
         android:layout_marginStart="107dp"
         android:layout_marginLeft="107dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="108dp"
         android:layout_marginRight="108dp"
         android:src="@drawable/default_avatar"
@@ -34,7 +34,7 @@
         android:textColor="#ffffff"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
 
@@ -60,13 +60,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="143dp"
         android:layout_marginLeft="143dp"
-        android:layout_marginTop="170dp"
         android:layout_marginEnd="144dp"
         android:layout_marginRight="144dp"
-        android:text="Change Image"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/button_layout"
+        android:drawableLeft="@drawable/ic_camera"
+        android:paddingLeft="5dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:text="Change Image  "
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/btChangeStatus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btChangeStatus"
@@ -74,13 +80,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="138dp"
         android:layout_marginLeft="138dp"
-        android:layout_marginTop="17dp"
         android:layout_marginEnd="137dp"
         android:layout_marginRight="137dp"
-        android:text="Change Status"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/button_layout"
+        android:drawableLeft="@drawable/ic_edit"
+        android:paddingLeft="7dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:text="Change Status  "
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btChangeImage" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

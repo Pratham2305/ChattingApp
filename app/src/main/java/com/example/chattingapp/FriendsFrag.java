@@ -122,7 +122,7 @@ public class FriendsFrag extends Fragment {
                                     if (dataSnapshot.hasChild("online")){
                                         String online=  dataSnapshot.child("online").getValue().toString();
 
-                                        if (online.equals(true)){
+                                        if (online.equals("true")){
 
                                             holder.user_online_icon.setVisibility(View.VISIBLE);
                                         }

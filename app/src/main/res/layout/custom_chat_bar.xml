@@ -8,10 +8,10 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/custom_bar_image"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginLeft="120dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/default_avatar"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -21,7 +21,6 @@
         android:id="@+id/last_seen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Last Seen"
-        android:textColor="#ffffff" />
+        android:text="Last Seen" />
 
 </LinearLayout>
