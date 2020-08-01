@@ -21,6 +21,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
+        android:background="@drawable/curve_rec_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/status_toolbar">
@@ -31,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
+            android:fontFamily="@font/poppins"
             android:hint="YOUR STATUS" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -38,10 +40,15 @@
         android:id="@+id/status_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginRight="33dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/button_layout"
+        android:fontFamily="@font/poppins"
+        android:padding="4dp"
         android:text="SAVED CHANGES"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 

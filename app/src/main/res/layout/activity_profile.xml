@@ -9,7 +9,8 @@
 
     <include
         android:id="@+id/profile_toolbar"
-        layout="@layout/app_bar_layout">
+        layout="@layout/app_bar_layout"
+        android:visibility="gone">
 
     </include>
 
@@ -17,10 +18,8 @@
         android:id="@+id/ivProfilePhoto"
         android:layout_width="0dp"
         android:layout_height="300dp"
-        android:layout_marginBottom="375dp"
         android:fitsSystemWindows="true"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_toolbar"
@@ -30,34 +29,27 @@
         android:id="@+id/tvProfileName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="362dp"
-        android:layout_marginEnd="260dp"
-        android:transitionName="nameTransition"
-        android:layout_marginRight="260dp"
+        android:fontFamily="@font/poppins"
         android:text="Martin King"
         android:textColor="#ffffff"
         android:textSize="28sp"
         android:textStyle="bold"
+        android:transitionName="nameTransition"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.69"
-        app:layout_constraintStart_toEndOf="@+id/ivProfilePhoto"
-        app:layout_constraintTop_toTopOf="@+id/ivProfilePhoto" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <TextView
         android:id="@+id/tvProfileStatus"
         android:layout_width="wrap_content"
         android:layout_height="27dp"
-        android:layout_marginStart="176dp"
-        android:layout_marginLeft="176dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="177dp"
-        android:layout_marginRight="177dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/poppins"
         android:text="Status"
         android:textColor="#ffffff"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:transitionName="statusTransition"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfileName" />
 
@@ -65,30 +57,21 @@
         android:id="@+id/btRequest"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginStart="166dp"
-        android:layout_marginLeft="166dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="157dp"
-        android:layout_marginRight="157dp"
-        android:layout_marginBottom="111dp"
-        android:background="#4169E1	"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_layout"
+        android:fontFamily="@font/poppins"
         android:text="  Send Friend Request  "
         android:textColor="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btDecline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFriendsCount"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvFriendsCount"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
-        android:layout_marginStart="177dp"
-        android:layout_marginLeft="177dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="175dp"
-        android:layout_marginRight="175dp"
+        android:fontFamily="@font/poppins"
         android:text="Friends Count :-"
         android:textColor="#ffffff"
         android:textSize="16sp"
@@ -100,31 +83,25 @@
         android:id="@+id/btDecline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginRight="163dp"
-        android:layout_marginBottom="8dp"
-        android:background="#4169E1	"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/button_layout"
         android:enabled="false"
+        android:fontFamily="@font/poppins"
         android:text="  Decline Friend Request  "
         android:textColor="#ffffff"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btRequest" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="248dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginRight="156dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:transitionName="imageTransition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ivProfilePhoto"
         app:srcCompat="@drawable/chatting" />
 </androidx.constraintlayout.widget.ConstraintLayout>
