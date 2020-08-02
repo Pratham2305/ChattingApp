@@ -4,18 +4,19 @@
     xmlns:xnlns="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="7dp"
+    android:layout_margin="8dp"
 
+    android:background="@drawable/curve_rec_background"
+    android:backgroundTint="#fcfb00"
+    android:elevation="8dp"
+    android:orientation="vertical"
     app:ignore="NamespaceTypo">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        xnlns:cardBackgroundColor="#431c53"
-        xnlns:cardCornerRadius="20dp"
-        xnlns:cardElevation="5dp"
-       >
+        android:layout_height="wrap_content"
+        android:backgroundTint="#fcfb00"
+        xnlns:cardElevation="5dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/friend_profile_image"
@@ -31,8 +32,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="95dp"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins"
             android:text="User Name"
-            android:textColor="#ff8b00"
+            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -41,7 +43,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="95dp"
             android:layout_marginTop="32dp"
-            android:textColor="#ffb052"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
             android:textSize="16sp" />
 
         <ImageView
@@ -58,7 +61,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="92dp"
             android:layout_marginTop="57dp"
-            android:textColor="#ffc785" />
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black" />
 
     </androidx.cardview.widget.CardView>
 

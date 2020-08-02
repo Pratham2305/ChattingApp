@@ -4,15 +4,17 @@
     xmlns:xnlns="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/curve_rec_background"
+    android:backgroundTint="	#353839"
+    android:elevation="8dp"
     android:orientation="vertical"
-    android:padding="7dp"
     app:ignore="NamespaceTypo">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        xnlns:cardBackgroundColor="	#353839"
-        xnlns:cardCornerRadius="20dp"
+        android:backgroundTint="	#353839"
         xnlns:cardElevation="5dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -29,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="95dp"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins"
             android:text="User Name"
             android:textColor="#fcfb00"
             android:textSize="18sp" />

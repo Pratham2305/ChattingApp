@@ -18,10 +18,10 @@
             android:id="@+id/chat_toolbar_img"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginTop="5dp"
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:src="@drawable/default_avatar"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"></de.hdodenhof.circleimageview.CircleImageView>
 
@@ -29,7 +29,8 @@
             android:id="@+id/chat_toolbar_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins"
             android:text="Display Name"
             android:textColor="#fcfb00"
             android:textSize="20sp"
@@ -40,11 +41,11 @@
             android:id="@+id/chat_toolbar_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/poppins"
             android:text="TextView"
             android:textColor="#ffffff"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/chat_toolbar_name"
+            app:layout_constraintTop_toBottomOf="@+id/chat_toolbar_name" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
