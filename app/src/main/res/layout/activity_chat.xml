@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wall"
+    android:background="@drawable/gradient"
     tools:context=".ChatActivity">
 
     <include
         android:id="@+id/chat_toolbar"
         layout="@layout/chat_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="72dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"></include>
 
@@ -39,17 +39,19 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#ffffff"
+        android:background="@drawable/curve_top"
+        android:elevation="16dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="27dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/btChatAdd"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:background="#ffffff"
+            android:background="@android:color/transparent"
             app:srcCompat="@drawable/add_extra" />
 
         <EditText
@@ -57,7 +59,8 @@
             android:layout_width="224dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#ffffff"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppins"
             android:hint="Enter Message..."
             android:inputType="text"
             android:padding="10dp"
@@ -68,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
-            android:background="#ffffff"
+            android:background="@android:color/transparent"
             app:srcCompat="@drawable/send" />
     </LinearLayout>
 
