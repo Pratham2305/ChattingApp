@@ -72,7 +72,7 @@ public class ChatFrag extends Fragment {
         no_chat_tv=mMainView.findViewById(R.id.no_chat_tv);
         no_chat_img=mMainView.findViewById(R.id.no_chat_img);
 
-
+if(mAuth.getCurrentUser().getUid()!=null)
             mCurrent_user_id = mAuth.getCurrentUser().getUid();
 
             mMessageDatabase = FirebaseDatabase.getInstance().getReference().child("messages").child(mCurrent_user_id);
@@ -152,6 +152,8 @@ public class ChatFrag extends Fragment {
 
                                             String data = dataSnapshot.child("message").getValue().toString();
                                             String type = dataSnapshot.child("type").getValue().toString();
+
+                                            if(data.length()>30) data = data.substring(0,30)+" ... ";
 
                                             if (type.equals("text")) {
                                                 holder.userStatus.setText(data);

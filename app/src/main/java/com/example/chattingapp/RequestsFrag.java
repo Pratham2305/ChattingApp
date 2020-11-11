@@ -90,7 +90,6 @@ if (mAuth.getCurrentUser() != null) {
     mFriendReqDatabase = FirebaseDatabase.getInstance().getReference().child("Friend_req").child(mCurrent_user_id);
     Friend_req = FirebaseDatabase.getInstance().getReference().child("Friend_req");
     mCurrent_user = FirebaseAuth.getInstance().getCurrentUser();
-    mRootRef = FirebaseDatabase.getInstance().getReference();
 
 
     mFriendReqDatabase.keepSynced(true);
@@ -111,6 +110,7 @@ if (mAuth.getCurrentUser() != null) {
     public void onStart() {
         super.onStart();
 
+        mRootRef = FirebaseDatabase.getInstance().getReference();
 
             mRootRef.addValueEventListener(new ValueEventListener() {
             @Override
